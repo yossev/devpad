@@ -1,0 +1,15 @@
+.root {
+    -fx-background-color: #f0f0f0;
+}
+
+.ModeButton {
+    -fx-background-color: #7D7C7C; /* Set the background color for light mode */
+    -fx-text-fill: #000000; 
+    -fx-padding: 10 20 10 20;
+}
+/* Style for the VBox containing the ToggleButton */
+.vbox-container {
+    -fx-spacing: 9; /* Add vertical margin of 10 pixels */
+}
+
+/* Light mode */
