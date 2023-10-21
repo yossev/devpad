@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
+    	
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("main.fxml"));
             Parent root = loader.load();
@@ -17,10 +18,11 @@ public class Main extends Application {
             MainController controller = new MainController(primaryStage); // Referenced the PrimaryStage to the controller
             loader.setController(controller);
 
-            Scene scene = new Scene(root, 800, 600);
+            Scene scene = new Scene(root, 1162, 889);
 
             primaryStage.setScene(scene);
             primaryStage.setTitle("Devpad");
+            primaryStage.setResizable(false); // unresizable for now
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="containerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="855.0" prefWidth="1112.0" stylesheets="@../Styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<Pane fx:id="containerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="889.0" prefWidth="1162.0" styleClass="root dark-mode" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <ToolBar layoutY="-3.0" prefHeight="27.0" prefWidth="1098.0">
+      <ToolBar layoutY="-3.0" prefHeight="27.0" prefWidth="1162.0">
          <items>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="80.0" text="Devpad V0.1">
                <tooltip>
@@ -24,12 +24,11 @@
             </Label>
          </items>
       </ToolBar>
-      <Separator layoutX="94.0" layoutY="34.0" orientation="VERTICAL" prefHeight="822.0" prefWidth="49.0" />
-      <Button fx:id="newTextAreaButton" layoutX="10.0" layoutY="45.0" mnemonicParsing="false" onAction="#newNoteHandler" prefHeight="35.0" prefWidth="97.0" text="New Note +">
+      <Separator layoutX="94.0" layoutY="24.0" orientation="VERTICAL" prefHeight="868.0" prefWidth="49.0" />
+      <Button fx:id="newTextAreaButton" layoutX="12.0" layoutY="33.0" mnemonicParsing="false" onAction="#newNoteHandler" prefHeight="35.0" prefWidth="97.0" text="New Note +">
          <font>
             <Font size="13.0" />
          </font></Button>
-      <ScrollBar layoutX="1098.0" orientation="VERTICAL" prefHeight="855.0" prefWidth="14.0" />
       <Label fx:id="pressThePlus" alignment="CENTER" layoutX="473.0" layoutY="306.0" opacity="0.3" prefHeight="269.0" prefWidth="212.0" text="  Press the ' + '" textAlignment="CENTER">
          <effect>
             <Glow />
@@ -37,12 +36,12 @@
          <font>
             <Font name="Gill Sans MT" size="17.0" />
          </font></Label>
-      <TextArea fx:id="newTextArea" layoutX="125.0" layoutY="133.0" prefHeight="720.0" prefWidth="971.0" visible="false">
+      <TextArea fx:id="newTextArea" layoutX="120.0" layoutY="123.0" prefHeight="730.0" prefWidth="1033.0" visible="false">
          <font>
             <Font size="16.0" />
          </font>
       </TextArea>
-      <TextField fx:id="TitleTextField" alignment="TOP_LEFT" layoutX="125.0" layoutY="28.0" prefHeight="42.0" prefWidth="850.0" promptText="Title Here" visible="false">
+      <TextField fx:id="TitleTextField" alignment="TOP_LEFT" layoutX="121.0" layoutY="43.0" prefHeight="53.0" prefWidth="908.0" promptText="Title Here" visible="false">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
@@ -52,7 +51,10 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Separator layoutX="5.0" layoutY="87.0" prefHeight="1.0" prefWidth="108.0" />
       <VBox fx:id="noteContainer" layoutX="9.0" layoutY="98.0" prefHeight="754.0" prefWidth="100.0" />
+      <Button fx:id="saveButton" layoutX="1062.0" layoutY="42.0" mnemonicParsing="false" onAction="#saveButtonHandler" prefHeight="42.0" prefWidth="68.0" text="Save" visible="false" />
    </children>
+   <stylesheets>
+      <URL value="@../Styles/styles.css" />
+   </stylesheets>
 </Pane>
