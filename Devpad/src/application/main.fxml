@@ -17,7 +17,7 @@
    <children>
       <ToolBar layoutY="-3.0" prefHeight="27.0" prefWidth="1162.0">
          <items>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="80.0" text="Devpad V0.1">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="80.0" text="Devpad V0.5">
                <tooltip>
                   <Tooltip text="Made by Yossev v0.1 :)" />
                </tooltip>

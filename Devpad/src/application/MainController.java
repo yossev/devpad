@@ -17,10 +17,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -89,28 +91,53 @@ public class MainController {
 	}
 	
 	@FXML
-	private void saveButtonHandler(ActionEvent event){
-			saveButton.setVisible(false);
-			Path path = Paths.get("D:\\");
-    		String fileName = noteTitle + ".txt";
-    		Path filePath = path.resolve(fileName);
-    		
-    	try {
-            // Now calling Files.writeString() method
-            // with path , content & standard charsets
-    		String str = TitleTextField.getText() +"\n-------\n"+  newTextArea.getText();
-    		Files.writeString(filePath, str, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-            System.out.println("File Written");                  				
-        }
- 
-        // Catch block to handle the exception
-        catch (IOException ex) {
+	private void saveButtonHandler(ActionEvent event) {
+	    saveButton.setVisible(false);
 
-            System.out.print("Invalid Path");
-            System.out.println("A7A");
-        }
+	    // Create a TextInputDialog to get the desired file name from the user
+	    TextInputDialog dialog = new TextInputDialog();
+	    dialog.setTitle("Save File");
+	    dialog.setHeaderText("Enter the file name:");
+	    dialog.setContentText("File Name:");
+
+	    // Show the dialog and wait for the user's input
+	    dialog.showAndWait().ifPresent(fileName -> {
+	        // Process the user's input
+	        if (fileName != null && !fileName.isEmpty()) {
+	            Path path = Paths.get("D:\\" + fileName + ".txt");
+	            try {
+	                String str = TitleTextField.getText() + "\n-------\n" + newTextArea.getText();
+	                Files.writeString(path, str, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+	                System.out.println("File Written");
+
+	                // Alert for saving
+	                Alert savedAlert = new Alert(Alert.AlertType.CONFIRMATION);
+	                savedAlert.setHeaderText("Saved!");
+	                savedAlert.setResizable(false);
+	                savedAlert.show();
+	                
+	                String alertCss = getClass().getResource("/Styles/styles.css").toExternalForm();
+	                savedAlert.getDialogPane().getStylesheets().add(alertCss);
+	            
+	            } catch (IOException ex) {
+	                System.out.print("Invalid Path");
+	                System.out.println("A7A");
+	            }
+	        }
+	        else {
+	        	
+	        	Alert NullNameAlert = new Alert(Alert.AlertType.ERROR);
+	        	NullNameAlert.setHeaderText("Your File name can't be empty!");
+	        	NullNameAlert.setContentText("Please Enter File name");
+	        	NullNameAlert.getDialogPane().getStylesheets().add(getClass().getResource("/Styles/styles.css").toExternalForm());
+	        	NullNameAlert.show();
+	        	saveButton.setVisible(true);
+	    
+	        }
+	    });
+	}
 	} 
-}
+
 		
 
 	
