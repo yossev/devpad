@@ -3,10 +3,10 @@
 ![icon](https://github.com/yossev/devpad/assets/93604359/e1536f39-03e2-48e7-9f90-969b4a583788)
 
 
-Devpad is a simple note-taking application developed using Java , JavaFX and CSS.
+**Devpad is a simple note-taking application developed using Java , JavaFX and CSS.**
 
 
-Syntax Highlighting Support is coming soon!
+**Syntax Highlighting Support is coming soon!**
 
 ## Features
 
