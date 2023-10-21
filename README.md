@@ -4,6 +4,7 @@
 
 
 Devpad is a simple note-taking application developed using Java , JavaFX and CSS.
+Syntax Highlighting Support is coming soon!
 
 ## Features
 
