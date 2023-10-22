@@ -13,7 +13,7 @@
 - Create and save text notes.
 - Organize your notes with custom titles.
 - Modern and user-friendly interface.
-- Supports custom themes for a personalized experience.
+- Custom Themes and Syntax Highlighting Soon!
 
 ## Getting Started
 
